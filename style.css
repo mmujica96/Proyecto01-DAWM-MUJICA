@@ -3,8 +3,27 @@ html, body {
   width: 100%;
 }
 .encabezado{
-  background: pink;
+  background: #8FD8D2;
 }
-.encabezado p{
-  
+.encabezado h2{
+  align-items: center;
 }
+h1, h2, h3{
+  color: #DF744A;
+}
+
+.contactame{
+  background:#FEDCD2 ;
+}
+/*COLORES NEONES EN CONTRASTE
+VOID: #OEOB16
+FUCSIA: #A239CA
+AZUL: #4717F6
+STARK: #E7DFDD
+
+PATEL
+POWDER: #8FD8D2
+PEACH: #FEDCD2
+WARM : #DF744A
+LEMON: #DCB239
+*/
