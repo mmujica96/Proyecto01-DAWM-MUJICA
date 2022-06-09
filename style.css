@@ -121,6 +121,7 @@ h1, h2, h3{
   justify-content: space-evenly;
   font-weight: bold;
   color: grey;
+  border-radius: 8px;
   }
   .grid-container .item5{
     background: #FEDCD2;
@@ -129,18 +130,54 @@ h1, h2, h3{
     width: 100%;
     height: auto;
   }
+  /****************CUERPO INFO*************/
+  .cuerpoInfo{
+    display: grid;
+    grid-gap: 1rem;
+  }
   /************CONTAINER INFO**************/
   .containerInfo{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
   }
+  .metas, .estudios{
+    display: flex;
+    flex-direction: column;
+    background-color: #DCB239;
+    color: white;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 8px;
+    
+  }
+
+  .pelicula, .mapa{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #8FD8D2;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  .pelicula h3{
+    margin-bottom: 1rem;
+  }
 
 /*************** FORMULARIO ******************/
 .contactame{
   background:#FEDCD2 ;
+  display: flex;
+  flex-direction: column;
 }
 
+
+footer{
+  text-align: center;
+  padding: 5px;
+}
 /*COLORES NEONES EN CONTRASTE
 VOID: #OEOB16
 FUCSIA: #A239CA
