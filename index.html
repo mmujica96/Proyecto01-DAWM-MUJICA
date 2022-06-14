@@ -114,22 +114,27 @@
   
   </div>
       <!-- Formulario -->
-      <div class="contactame" id="contactame" center>
-        <h3>Formulario de contacto: </h3>
-      <form action="" method="get">
-        <label  id="nombre" >Nombres: </label>
-        <input type="text" id="nombre" required="required" placeholder="Escriba sus nombres..">
-        <br>
-        <label  id="apellido" >Apellidos: </label>
-        <input type="text" id="apellido" required="required" placeholder="Escriba sus apellidos.." >
-        <br>
-        <label  id="email" >Correo Electronico: </label>
-        <input type="email" id="email" required="required" placeholder="Escriba su email..">
-        <br>
-        <label>Mensaje:</label>
+      <div class="contactame" id="contactame" >
+        <div>
+          <h3>Formulario de contacto</h3>
+        <form action="" method="get">
+        <label  for="nombre" >Nombres: </label>
+        <input type="text" name="nombre" id="nombre" required="required" placeholder="Escriba sus nombres..">
+       
+        <label  id="apellidos" >Apellidos: </label>
+        <input type="text" name="apellidos" id="apellidos" required="required" placeholder="Escriba sus apellidos.." >
+    
+        <label  id="email" >Email: </label>
+        <input type="email" name="email" id="email" required="required" placeholder="Escriba su email..">
+
+        <label for="mensaje">Mensaje:</label>
         <textarea cols="30" rows="10" placeholder="Motivo de contacto...."></textarea>
+      
+        <input type="submit" name="enviar" value="Enviar"/>
+
       </form>
-      <button>Enviar</button>
+        </div>
+    
     </div>
 </div>
 

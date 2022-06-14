@@ -1,6 +1,30 @@
-@media (max-width: 500px){ 
-    .containerInfo{
+@media (max-width: 600px){
+  body {
+    margin: 0;
+    padding: 0;
+  } 
+    .grid-container{
+        grid-template-areas: 
+        'header2  header2'
+        'foto foto'
+        'redesSociales redesSociales'
+        'descripcion descripcion';
+      }
+      .grid-container div.item1{
+        display: none;
+      }
+      .grid-container .item2{
+        border-radius: 0 0 40px 40px;
+        font-weight: bold;
+      }
+ }
+ @media (max-width: 450px){
+      .containerInfo{
         display: grid;
         grid-template-columns: 1fr;
+        grid-gap: 1rem;
+      }
+      .grid-container div.item1{
+        display: none;
       }
  }
