@@ -42,7 +42,6 @@ h1, h2, h3{
 }
 
 .grid-container > div {
-  background: #8FD8D2;
   text-align: center;
   padding: 20px 0;
   /*font-size: 20px;*/
@@ -94,29 +93,22 @@ h1, h2, h3{
     
 
   }
-  .item3  p{
+  .item3  p, a{
     color: #DF744A ;
   }
 
 
   /********* ITEM 4 **************************/
   #cuadricula{
-    display: grid;
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    grid-gap: 2rem;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
-  .item{
-    border: 1px solid #000;
-    border-radius: 10px;
+  .item4 a{
+    display: flex;
+    justify-content: space-around;
   }
-  .item img{
-    width: 30%;
-    height: auto;
-  }
-  li{
-    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/1200px-Facebook_icon.svg.png);
-}
+  
   /***************** ITEM 5 *************/
   .item5{
   display: grid;
@@ -147,13 +139,12 @@ h1, h2, h3{
   .metas, .estudios{
     display: flex;
     flex-direction: column;
-    background-color: #DCB239;
+    background-color: #FEDCD2;
     color: black;
     text-align: center;
     padding-top: 3%;
     padding-bottom: 3%;
     border-radius: 8px;
-    box-shadow: 15px 5px 10px #48529944;
     margin-top: 1rem;
   }
 
@@ -161,7 +152,7 @@ h1, h2, h3{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #8FD8D2;
+    background: linear-gradient(#FEDCD2, #8FD8D2);
     text-align: center;
     padding: 2rem;
     border-radius: 8px;
@@ -186,6 +177,7 @@ h1, h2, h3{
   margin: auto;
   background-color: #FEDCD2;
   border-radius: 30px;
+  box-shadow: 15px 5px 10px #48529944;
 }
  form{
   width:300px;
@@ -224,6 +216,7 @@ form input[type="submit"]{
 
 form input[type="submit"]:hover{
 	cursor:pointer;
+  background-color: rgb(93, 207, 93);
 }
 
 textarea{
@@ -244,6 +237,7 @@ footer{
   padding: 5px;
   margin-top: 1.3rem;
 }
+
 /*COLORES NEONES EN CONTRASTE
 VOID: #OEOB16
 FUCSIA: #A239CA

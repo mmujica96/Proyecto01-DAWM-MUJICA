@@ -15,10 +15,11 @@
         font-weight: bold;
       }
       #cuadricula{
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-gap: 1em;
-        height: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        
       }
  }
  @media (max-width: 500px){
@@ -29,5 +30,8 @@
       }
       .grid-container div.item1{
         display: none;
+      }
+      .pelicula{
+        background-color: #FEDCD2;
       }
  }
