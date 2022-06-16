@@ -1,5 +1,8 @@
 @media (max-width: 750px){
-  
+    html{
+      margin: 0;
+      padding: 0 3%;
+    }
     .grid-container{
         grid-template-areas: 
         'header2  header2'
