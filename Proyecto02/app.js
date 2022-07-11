@@ -1,3 +1,6 @@
+const URL= "ttp://api.citybik.es/v2/networks/";
+
+
 
 async function cargarDatos() {
     const redes = await this.GetCityBikes(); 
@@ -12,7 +15,7 @@ async function cargarDatos() {
                             <td>${id}</td>
                             <td>${nombre}</td>
                             <td>${compania}</td>
-                            <td>${locacion}</td>
+                            <td>${locacion.country} - ${locacion.city}</td>
                         </tr>
 
                         `
@@ -22,7 +25,7 @@ async function cargarDatos() {
 
 
 async function GetCityBikes(){
-return fetch("http://api.citybik.es/v2/networks")
+return fetch("http://api.citybik.es/v2/networks/")
 .then(response => response.json())
 .then(data => {
 const array = data.networks;
