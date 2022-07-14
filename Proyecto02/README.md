@@ -10,6 +10,11 @@
 ## Framework
 * Bootstrap 5
 
+## Archivos principales
+* index.html
+* admin.js
+* adimin.css
+
 
 ## Referencias 
 * Aqui referecnias de paginas donde se extrajo informacion.

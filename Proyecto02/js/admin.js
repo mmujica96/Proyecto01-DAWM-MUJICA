@@ -40,17 +40,20 @@ var myChart = new Chart(ctx, {
   },
 });
 
-const URL= "ttp://api.citybik.es/v2/networks/";
-
-
+const URL= "http://api.citybik.es";
 
 async function cargarDatos() {
+    let countNetworks=0;
+    let arregloPaises =[];
+    let arregloCiudad =[];
     const redes = await this.GetCityBikes(); 
     for(let  red of redes) {
+      countNetworks= countNetworks+1;
         let compania = red.company;
         let locacion = red.location;
         let nombre = red.name;
         let id = red.id;
+        let href = red.href;
         let plantilla = 
         `
                         <tr>
@@ -62,9 +65,27 @@ async function cargarDatos() {
 
                         `
             document.getElementById('elemento').innerHTML+= plantilla;
-        }      
-    };
+        if(arregloPaises.includes(locacion.country) != true){
+          arregloPaises.push(locacion.country);
+        }
+        if(arregloCiudad.includes(locacion.city) != true){
+          arregloCiudad.push(locacion.city);
+        }
+        fetch(URL+href)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(console.error);
+        }
+        //console.log(arregloCiudad);
+        //console.log(countNetworks);
+        document.getElementById("totalpais").innerHTML= arregloPaises.length;
+        document.getElementById("totalciudad").innerHTML= arregloCiudad.length;
+        document.getElementById("totalnetworks").innerHTML= countNetworks;
 
+    };
+    
 
 async function GetCityBikes(){
 return fetch("http://api.citybik.es/v2/networks/")
