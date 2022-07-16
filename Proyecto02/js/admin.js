@@ -1,51 +1,15 @@
-// Graph
-var ctx = document.getElementById("myChart");
-
-var myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ],
-    datasets: [
-      {
-        data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-        lineTension: 0,
-        backgroundColor: "transparent",
-        borderColor: "#007bff",
-        borderWidth: 4,
-        pointBackgroundColor: "#007bff",
-      },
-    ],
-  },
-  options: {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: false,
-          },
-        },
-      ],
-    },
-    legend: {
-      display: false,
-    },
-  },
+window.addEventListener('DOMContentLoaded', (event) => {
+  cargarDatos(); 
 });
 
+var mapaPaises = new Map();
+var mapaCiudad = new Map();
+var claves=[];
+var valores=[];
 const URL= "http://api.citybik.es";
 
 async function cargarDatos() {
     let countNetworks=0;
-    let arregloPaises =[];
-    let arregloCiudad =[];
     const redes = await this.GetCityBikes(); 
     for(let  red of redes) {
       countNetworks= countNetworks+1;
@@ -64,28 +28,38 @@ async function cargarDatos() {
                         </tr>
 
                         `
-            document.getElementById('elemento').innerHTML+= plantilla;
-        if(arregloPaises.includes(locacion.country) != true){
-          arregloPaises.push(locacion.country);
+        document.getElementById('elemento').innerHTML+= plantilla;
+        if(mapaPaises.has(locacion.country)!= true){
+          mapaPaises.set(locacion.country,1);
+        }else{
+          valor=mapaPaises.get(locacion.country);
+          mapaPaises.set(locacion.country, valor+1);
         }
-        if(arregloCiudad.includes(locacion.city) != true){
-          arregloCiudad.push(locacion.city);
+        if(mapaCiudad.has(locacion.city)!= true){
+          mapaCiudad.set(locacion.city,1);
+        }else{
+          valor=mapaCiudad.get(locacion.city);
+          mapaCiudad.set(locacion.city, valor+1);
         }
-        fetch(URL+href)
+        /*fetch(URL+href)
           .then(response => response.json())
           .then(data => {
             console.log(data);
           })
-          .catch(console.error);
+          .catch(console.error);*/
         }
-        //console.log(arregloCiudad);
         //console.log(countNetworks);
-        document.getElementById("totalpais").innerHTML= arregloPaises.length;
-        document.getElementById("totalciudad").innerHTML= arregloCiudad.length;
+        document.getElementById("totalpais").innerHTML= mapaPaises.size
+        document.getElementById("totalciudad").innerHTML= mapaCiudad.size
         document.getElementById("totalnetworks").innerHTML= countNetworks;
-
+        console.log(mapaCiudad);
+        console.log(mapaPaises);
+        mapaPaises.forEach (function(value, key) {
+          claves.push(key);
+          valores.push(value);
+        })
+        chart(claves,valores)
     };
-    
 
 async function GetCityBikes(){
 return fetch("http://api.citybik.es/v2/networks/")
@@ -100,8 +74,32 @@ return array;
 }); 
 }
 
-
-window.addEventListener('DOMContentLoaded', (event) => {
-//se llama el callback(una funcion como parametro de otra funcion)
-cargarDatos(); 
+//Graph 
+function chart(labels,data) {
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Numero de redes de bicicletas',
+        data: data,
+        lineTension: 0,
+        backgroundColor: "transparent",
+        borderColor: "rgb(255, 99, 132)",
+        borderWidth: 1,
+        
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+        },
+      
+    },
+  },
 });
+}
