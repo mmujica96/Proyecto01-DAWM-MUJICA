@@ -94,7 +94,7 @@ return array;
 //Graph 
 function chart(labels,data) {
   var ctx = document.getElementById("myChart");
-  var myChart = new Chart(ctx, {
+  new Chart(ctx, {
   type: "bar",
   data: {
     labels: labels,
@@ -102,11 +102,10 @@ function chart(labels,data) {
       {
         label: 'Numero de redes de bicicletas',
         data: data,
-        lineTension: 0,
-        backgroundColor: "transparent",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgb(54, 162, 235, 1)",
         borderWidth: 1,
-        
+        //aqui se puede agregar mas datos
       },
     ],
   },

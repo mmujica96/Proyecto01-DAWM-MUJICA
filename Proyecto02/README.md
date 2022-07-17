@@ -14,6 +14,7 @@
 * index.html
 * admin.js
 * adimin.css
+* /pages
 
 
 ## Referencias 
@@ -24,4 +25,5 @@
 * https://demos.creative-tim.com/material-dashboard/pages/dashboard.html
 * https://mdbootstrap.com/docs/standard/data/charts/
 * https://chartscss.org/components/data/
+* https://www.chartjs.org/
 
