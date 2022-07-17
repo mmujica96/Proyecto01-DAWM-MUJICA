@@ -75,7 +75,7 @@
             <div class="form-group">
                 <div class="input-group">
                     <select name="select" class="custom-select custom-select-lg form-control " required="">
-                      <option value="-1" selected="">Seleccione un Pais</option>
+                      <option value="-1" selected="">Seleccione un Red en Particular</option>
                     </select>
                 </div>
             </div>
@@ -84,7 +84,7 @@
       <section class="mb-4">
         <div class="card">
           <div class="card-header py-3">
-            <h5 class="mb-0 text-center"><strong>Paises</strong></h5>
+            <h5 class="mb-0 text-center"><strong id="nombreRed">Red</strong></h5>
           </div>
           <div class="card-body">
             <canvas class="my-4 w-100" id="myChart" height="380"></canvas>
@@ -106,8 +106,8 @@
               <table id="tabla" class="table table-responsive table-hover">
                 <thead>
                   <tr>
+                    <th>id</th>
                     <th>Nombre</th>
-                    <th>Compañia</th>
                     <th>Ciudad</th>
                     <th>Estacion</th>
                     <th>Disponibilidad</th>
