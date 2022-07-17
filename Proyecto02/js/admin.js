@@ -59,7 +59,24 @@ async function cargarDatos() {
           valores.push(value);
         })
         chart(claves,valores)
-    };
+};
+
+var busqueda = document.getElementById('buscar');
+var table = document.getElementById("tabla").tBodies[0];
+
+buscaTabla = function(){
+  texto = busqueda.value.toLowerCase();
+  var r=0;
+  while(row = table.rows[r++])
+  {
+    if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+      row.style.display = null;
+    else
+      row.style.display = 'none';
+  }
+}
+
+busqueda.addEventListener('keyup', buscaTabla);
 
 async function GetCityBikes(){
 return fetch("http://api.citybik.es/v2/networks/")
@@ -78,7 +95,7 @@ return array;
 function chart(labels,data) {
   var ctx = document.getElementById("myChart");
   var myChart = new Chart(ctx, {
-  type: "line",
+  type: "bar",
   data: {
     labels: labels,
     datasets: [
