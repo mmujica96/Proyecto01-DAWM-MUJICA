@@ -10,6 +10,10 @@
 ## Framework
 * Bootstrap 5
 
+
+## Icons
+* Fontawesome
+
 ## Archivos principales
 * index.html
 * admin.js
@@ -26,4 +30,5 @@
 * https://mdbootstrap.com/docs/standard/data/charts/
 * https://chartscss.org/components/data/
 * https://www.chartjs.org/
+* https://fontawesome.com/
 
