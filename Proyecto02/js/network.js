@@ -1,5 +1,4 @@
 const URL= "http://api.citybik.es/v2/networks/";
-var mapaStation = new Map();
 async function cargarDatos() {
     const redes = await this.GetCityBikes(); 
     for(let  red of redes) {
@@ -18,12 +17,14 @@ async function cargarDatos() {
         fetch(URL+result)
         .then(response => response.json())
         .then(data => {
-          const claves=[];
-          const valores=[];
           document.getElementById('elemento').innerHTML='';
           let id = data.network.id;
           let arraystation= data.network.stations;
-          for( const station of arraystation){
+          if(result == id){
+            var mapaStation = new Map();
+            const claves=[];
+            const valores=[];
+            for( const station of arraystation){
               //console.log(station);
               let plantilla = 
                 `
@@ -37,14 +38,16 @@ async function cargarDatos() {
                 `
               document.getElementById('elemento').innerHTML+= plantilla;
               mapaStation.set(station.name,station.free_bikes);
+            }
+            console.log(mapaStation);
+            mapaStation.forEach (function(value, key) {
+                claves.push(key);
+                valores.push(value);
+            })
+            console.log(claves);
+            console.log(valores);
+            chart(claves,valores);
           }
-          mapaStation.forEach (function(value, key) {
-              claves.push(key);
-              valores.push(value);
-          })
-          console.log(claves);
-          console.log(valores);
-          chart(claves,valores);
           })
     });
     
