@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@900&display=swap');
 
-.container-fluid {
+.container {
 	background: #EEE73F;
 	background: linear-gradient(0deg, rgb(174, 177, 0) 0%, rgb(255, 251, 0) 100%);
 }

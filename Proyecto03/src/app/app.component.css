@@ -1,1 +1,5 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@900&display=swap');
+
+*{
+    font-family: 'Martel Sans', sans-serif; 
+}
