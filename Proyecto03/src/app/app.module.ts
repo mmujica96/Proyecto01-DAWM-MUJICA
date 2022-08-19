@@ -19,6 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
+import { DetalleComponent } from './detalle/detalle.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 const routes: Routes = [
   { path: "splash", component: SplashComponent },
@@ -32,7 +34,9 @@ const routes: Routes = [
     AppComponent,
     SplashComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DetalleComponent,
+    BusquedaComponent,
   ],
   imports: [
     BrowserModule,
