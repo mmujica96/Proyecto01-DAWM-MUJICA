@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -21,13 +20,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const routes: Routes = [
-  { path: "splash", component: SplashComponent },
-  { path: "login", component: LoginComponent},
-  { path: "home", component: HomeComponent },
-  { path: "**", redirectTo: "splash" }
-];
+
 
 @NgModule({
   declarations: [
@@ -56,9 +51,9 @@ const routes: Routes = [
     MatToolbarModule,
     MatDividerModule,
     MatTabsModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
-  exports: [RouterModule],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
