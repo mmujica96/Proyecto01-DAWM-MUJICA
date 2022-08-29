@@ -1,1 +1,16 @@
-<p>detalle works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4">
+            <img class="" [src]="detalle.Poster" [alt]="detalle.Title">
+        </div>
+        <div class="col-8">
+            <h1 class="display-1">{{detalle.Title}}</h1>
+            <p>{{detalle.Released}}</p>
+            <p><strong>Genero:  {{detalle.Genre}}</strong></p>
+            <p class="text"><strong>Descripción:</strong> {{detalle.Plot}}</p>
+            <p><strong>Escritores:</strong> {{detalle.Writer}}</p>
+            <p><strong>Actores:</strong> {{detalle.Actors}}</p>
+            <p><strong>Rating:</strong> {{detalle.imdbRating}}</p>
+        </div>
+    </div>
+</div>

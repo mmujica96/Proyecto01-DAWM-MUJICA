@@ -1,1 +1,24 @@
-<p>busqueda works!</p>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-11">
+                <label for="search" class="form-label">Busqueda</label>
+                <input type="text" class="form-control" id="search" placeholder="Avengers...." [(ngModel)]="search">
+        </div>
+        <div class="col-1 mt-4">
+            <button class="btn btn-primary" (click)="buscar()">Buscar</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3 mt-2" *ngFor="let item of resultados">
+            <div class="card" >
+                <img [src]="item.Poster" class="card-img-top" [alt]="item.Title">
+                <div class="card-body">
+                  <h3 class="card-title">{{item.Title}}</h3>
+                  <p class="card-text">Año: {{item.Year}}</p>
+                  <a href="#" class="btn btn-primary" (click)="detalle(item.imdbID)">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
