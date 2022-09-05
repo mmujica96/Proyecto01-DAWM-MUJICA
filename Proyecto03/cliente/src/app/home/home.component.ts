@@ -47,12 +47,13 @@ export class HomeComponent implements OnInit {
   ];
   
   displayedColumns: string[] = ['id', 'titulo'];
-  dataSource = [];
+  peliculas:any = [];
 
   constructor(private peliculaService: PeliculaService) { }
   ngOnInit(): void {
     this.peliculaService.obtenerPeliculas().subscribe(respuesta => {
-      this.dataSource = respuesta as any
+      console.log(respuesta);
+      this.peliculas = respuesta as any
     })
 
   }

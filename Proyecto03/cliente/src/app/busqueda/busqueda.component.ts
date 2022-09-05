@@ -21,7 +21,6 @@ export class BusquedaComponent implements OnInit {
         console.log(response);
         
         this.resultados= response['Search'];
-        console.log(this.resultados);
       });
   }
 
